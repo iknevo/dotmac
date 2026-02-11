@@ -1,0 +1,35 @@
+# aliases
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias n="nvim"
+alias m="rmpc"
+alias chez="chezmoi"
+alias chezcd="z $(chezmoi source-path)"
+alias files="nautilus"
+alias mv="bmv"
+alias lg="lazygit"
+alias ld="lazydocker"
+alias ..='z ..'
+alias ...='z ../..'
+alias ....='z ../../..'
+
+# yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/nevo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

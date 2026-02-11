@@ -1,0 +1,46 @@
+background = #000000
+foreground = #bebebe
+
+palette = 0=#333333
+palette = 1=#e19e74
+palette = 2=#FFC107
+palette = 3=#c6c4b0
+palette = 4=#e68e0d
+palette = 5=#8a8575
+palette = 6=#bebebe
+palette = 7=#bebebe
+
+palette = 8=#8a8a8d
+palette = 9=#984b1e
+palette = 10=#FFC107
+palette = 11=#8f4445
+palette = 12=#f59e0b
+palette = 13=#b3adad
+palette = 14=#eaeaea
+palette = 15=#ffffff
+
+# Window
+window-padding-x = 10
+window-padding-y = 10
+confirm-close-surface=false
+resize-overlay = never
+
+font-family = JetBrains Mono
+font-size = 18
+
+# Cursor stlying
+cursor-style = "block"
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Keyboard bindings
+keybind = f11=toggle_fullscreen
+keybind = shift+insert=paste_from_clipboard
+keybind = control+insert=copy_to_clipboard
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+
+# Slowdown mouse scrolling
+mouse-scroll-multiplier = 1.1
