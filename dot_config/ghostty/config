@@ -28,13 +28,14 @@ resize-overlay = never
 font-family = JetBrains Mono
 font-size = 18
 
+maximize = true
+
 # Cursor stlying
 cursor-style = "block"
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
 # Keyboard bindings
-keybind = f11=toggle_fullscreen
 keybind = shift+insert=paste_from_clipboard
 keybind = control+insert=copy_to_clipboard
 keybind = super+control+shift+alt+arrow_down=resize_split:down,100
