@@ -3,6 +3,8 @@
 	filemode = true
 	bare = false
 	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
 	worktree = ../../../../lib/tmux-test
 [remote "origin"]
 	url = https://github.com/tmux-plugins/tmux-test.git

@@ -1,6 +1,6 @@
 # aliases
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
-alias n="nvim"
+alias vim="nvim"
 alias m="rmpc"
 alias chez="chezmoi"
 alias chezcd="z $(chezmoi source-path)"

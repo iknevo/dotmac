@@ -1,11 +1,9 @@
 return {
   "folke/snacks.nvim",
   keys = {
-    { "<leader>fF", false },
-    { "<leader>sC", false },
+    { "<leader>fF",      false },
+    { "<leader>sC",      false },
     { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
-    { "<leader>E", "<leader>fE", desc = "Explorer Snacks (root dir)", remap = true },
-    { "<leader>e", "<leader>fe", desc = "Explorer Snacks (cwd)", remap = true },
     {
       "<leader>sc",
       function()
@@ -30,7 +28,7 @@ return {
         explorer = {
           -- focus = "input",
           show__modified = true,
-          -- auto_close = true,
+          auto_close = true,
           hidden = false,
           ignored = false,
           exclude = { "node_modules", ".git" },
@@ -66,12 +64,12 @@ return {
     dashboard = {
       preset = {
         header = [[
-          ███╗   ██╗███████╗██╗   ██╗ ██████╗ 
+          ███╗   ██╗███████╗██╗   ██╗ ██████╗
           ████╗  ██║██╔════╝██║   ██║██╔═══██╗
           ██╔██╗ ██║█████╗  ██║   ██║██║   ██║
           ██║╚██╗██║██╔══╝  ╚██╗ ██╔╝██║   ██║
           ██║ ╚████║███████╗ ╚████╔╝ ╚██████╔╝
-          ╚═╝  ╚═══╝╚══════╝  ╚═══╝   ╚═════╝ 
+          ╚═╝  ╚═══╝╚══════╝  ╚═══╝   ╚═════╝
       ]],
       },
     },
