@@ -1,6 +1,7 @@
 # aliases
-alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias vim="nvim"
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias m="rmpc"
 alias chez="chezmoi"
 alias chezcd="z $(chezmoi source-path)"
@@ -8,6 +9,9 @@ alias files="nautilus"
 alias mv="bmv"
 alias lg="lazygit"
 alias ld="lazydocker"
+
+alias t='tmux attach || tmux new -s Coding'
+
 alias ..='z ..'
 alias ...='z ../..'
 alias ....='z ../../..'
