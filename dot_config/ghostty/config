@@ -29,6 +29,7 @@ font-family = JetBrains Mono
 font-size = 18
 window-decoration = false
 macos-option-as-alt = true
+mouse-hide-while-typing = true
 
 maximize = true
 
@@ -46,4 +47,4 @@ keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 
 # Slowdown mouse scrolling
-mouse-scroll-multiplier = 1.1
+# mouse-scroll-multiplier = 1.1

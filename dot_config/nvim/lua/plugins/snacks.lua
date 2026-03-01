@@ -28,7 +28,7 @@ return {
         explorer = {
           -- focus = "input",
           show__modified = true,
-          auto_close = true,
+          -- auto_close = true,
           hidden = false,
           ignored = false,
           exclude = { "node_modules", ".git" },
