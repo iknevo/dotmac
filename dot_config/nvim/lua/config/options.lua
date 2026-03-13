@@ -53,3 +53,5 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 vim.o.undofile = true
+
+vim.api.nvim_set_hl(0, "htmlLink", { underline = false })

@@ -13,6 +13,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.cmd("highlight htmlLink gui=NONE cterm=NONE")
+  end,
+})
+
 vim.hl.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
 
 vim.diagnostic.config({
