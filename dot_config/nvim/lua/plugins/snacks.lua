@@ -33,7 +33,7 @@ return {
           -- auto_close = true,
           hidden = false,
           ignored = false,
-          exclude = { "node_modules", ".git" },
+          exclude = { "node_modules" },
           layout = { layout = { position = "right" } },
           -- exclude = { "node_modules", ".git", "dist", "build", ".next" },
         },

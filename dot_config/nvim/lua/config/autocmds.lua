@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 vim.hl.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
-
 vim.diagnostic.config({
   virtual_text = {
     prefix = "●",

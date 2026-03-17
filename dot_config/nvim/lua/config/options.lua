@@ -18,7 +18,9 @@ vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
 
-vim.o.clipboard = "unnamedplus"
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
 
 vim.o.showmode = false
 
@@ -39,7 +41,7 @@ vim.o.breakindent = true
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.iskeyword:remove("_")
 
@@ -48,10 +50,14 @@ vim.o.foldmethod = "manual"
 vim.o.foldlevel = 99
 vim.o.foldcolumn = "0"
 
+vim.opt.colorcolumn = "100"
+
 -- Backup and swap
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 vim.o.undofile = true
+
+vim.o.signcolumn = "yes"
 
 vim.api.nvim_set_hl(0, "htmlLink", { underline = false })
