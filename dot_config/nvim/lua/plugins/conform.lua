@@ -3,7 +3,7 @@ return {
   opts = {
     formatters = {
       prettier = {
-        prepend_args = { "--trailing-comma", "none", "--print-width", "100" },
+        prepend_args = { "--trailing-comma", "es5", "--print-width", "100" },
       },
     },
   },

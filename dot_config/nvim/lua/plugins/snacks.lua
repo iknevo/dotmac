@@ -20,7 +20,7 @@ return {
         files = {
           hidden = false,
           ignored = false,
-          exclude = { "node_modules", ".git", "dist", "build", ".next" },
+          exclude = { "node_modules", "dist", "build", ".next" },
         },
         grep = {
           hidden = false,
@@ -31,8 +31,8 @@ return {
           -- focus = "input",
           show__modified = true,
           -- auto_close = true,
-          hidden = false,
-          ignored = false,
+          hidden = true,
+          ignored = true,
           exclude = { "node_modules" },
           layout = { layout = { position = "right" } },
           -- exclude = { "node_modules", ".git", "dist", "build", ".next" },
