@@ -19,9 +19,6 @@ vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
-
-vim.opt.clipboard = "unnamedplus"
-
 vim.o.showmode = false
 
 vim.o.mouse = "a"

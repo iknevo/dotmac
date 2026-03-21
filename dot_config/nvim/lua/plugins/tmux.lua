@@ -6,6 +6,9 @@ return {
         resize = {
           enable_default_keybindings = true,
         },
+        copy_sync = {
+          enable = false,
+        },
       })
     end,
   },

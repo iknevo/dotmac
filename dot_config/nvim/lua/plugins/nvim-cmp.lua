@@ -14,6 +14,8 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    luasnip.filetype_extend("javascript", { "javascriptreact" })
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
