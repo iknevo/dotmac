@@ -47,8 +47,6 @@ vim.o.foldmethod = "manual"
 vim.o.foldlevel = 99
 vim.o.foldcolumn = "0"
 
-vim.opt.colorcolumn = "100"
-
 -- Backup and swap
 vim.o.backup = false
 vim.o.writebackup = false

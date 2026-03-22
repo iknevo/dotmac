@@ -62,7 +62,7 @@ return {
       use_libuv_file_watcher = true,
     },
     window = {
-      position = "left",
+      position = "right",
       mappings = {
         ["l"] = "open",
         ["h"] = "close_node",
@@ -121,14 +121,14 @@ return {
         -- },
       },
     },
-    event_handlers = {
-      {
-        event = "file_opened",
-        handler = function()
-          require("neo-tree.command").execute({ action = "close" })
-        end,
-      },
-    },
+    -- event_handlers = {
+    --   {
+    --     event = "file_opened",
+    --     handler = function()
+    --       require("neo-tree.command").execute({ action = "close" })
+    --     end,
+    --   },
+    -- },
   },
   config = function(_, opts)
     local function on_move(data)

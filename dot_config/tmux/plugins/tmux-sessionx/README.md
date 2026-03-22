@@ -4,7 +4,7 @@ A fuzzy Tmux session manager with preview capabilities, deleting, renaming and m
 
 ![image](./img/sessionxv2.png)
 
-## Prerequisits 🛠️
+## Prerequisites 🛠️
 
 - [tpm](https://github.com/tmux-plugins/tpm)
 - [fzf](https://github.com/junegunn/fzf)
@@ -19,6 +19,89 @@ Add this to your `.tmux.conf` and run `Ctrl-I` for TPM to install the plugin.
 ```conf
 set -g @plugin 'omerxx/tmux-sessionx'
 ```
+
+<details>
+  <summary>
+  Install on Nix
+  </summary>
+
+
+### Via Nixpkgs
+
+The plugin can be [found in Nixpkgs](https://search.nixos.org/packages?channel=unstable&show=tmuxPlugins.tmux-sessionx&from=0&size=50&sort=relevance&type=packages&query=sessionx) and can be installed in one of three ways:
+
+#### Via nix-env
+
+##### On NixOS
+
+```bash
+nix-env -iA nixos.tmuxPlugins.tmux-sessionx
+```
+
+##### Non NixOS
+
+```bash
+# without flakes:
+nix-env -iA nixpkgs.tmuxPlugins.tmux-sessionx
+# with flakes:
+nix profile install nixpkgs#tmuxPlugins.tmux-sessionx
+```
+
+#### Via NixOS Configuration
+
+Add the following Nix code to your NixOS Configuration, usually located in `/etc/nixos/configuration.nix`.
+
+```nix
+environment.systemPackages = [
+    pkgs.tmuxPlugins.tmux-sessionx
+];
+```
+
+#### Via nix-shell
+
+A nix-shell will temporarily modify your `$PATH` environment variable. This can be used to try a piece of software before deciding to permanently install it.
+
+```bash
+nix-shell -p tmuxPlugins.tmux-sessionx
+```
+
+### Via flakes
+
+You may find that Nixpkgs does not have the latest updates of this plugin, this is where you might want to use a custom flake:
+
+#### In your flake.nix inputs
+
+```nix
+
+inputs.tmux-sessionx.url = "github:omerxx/tmux-sessionx";
+
+# ...
+
+# include inputs as special args for your systems configuration if you havent done already
+# this makes the inputs available to all your modules
+nixosConfigurations."system-name" = nixpkgs.lib.nixosSystem {
+    specialArgs = {inherit inputs;};
+    modules = [
+        # most likely your configuration.nix
+        # as well as others
+    ];
+  };
+```
+
+#### In your tmux.nix configuration or anywhere else in your configuration
+
+```nix
+
+programs.tmux.plugins = [
+  {
+    # Need to change <system> to your aarch or use ${pkgs.system} to interpolate aarch
+    plugin = inputs.tmux-sessionx.packages.<system>.default;
+    extraConfig = ''''
+  }
+]
+```
+
+</details>
 
 ## Configure ⚙️
 
@@ -71,7 +154,7 @@ set -g @sessionx-window-mode 'on'
 set -g @sessionx-tree-mode 'on'
 
 # Preview location and screenspace can be adjusted with these
-# Reminder: it can be toggeled on/off with `?`
+# Reminder: it can be toggled on/off with `?`
 set -g @sessionx-preview-location 'right'
 set -g @sessionx-preview-ratio '55%'
 
@@ -85,7 +168,7 @@ set -g @sessionx-window-width '75%'
 # If you want change the layout to top you can set
 set -g @sessionx-layout 'reverse'
 
-# If you want to change the prompt, the space is nedded to not overlap the icon
+# If you want to change the prompt, the space is needed to not overlap the icon
 set -g @sessionx-prompt " "
 
 # If you want to change the pointer
@@ -122,21 +205,26 @@ set -g @sessionx-fzf-marks-mode 'off'
 # This will filter out sessions that contain 'scratch' (used by tmux-floax)
 # and 'somesession'
 set -g @sessionx-filtered-sessions 'scratch,somesession'
+
+# Display the current git branch next to each session name.
+# Branches are loaded asynchronously so session list appears instantly.
+# Requires git. (default: off)
+set -g @sessionx-git-branch 'on'
 ```
 
 ## Working with SessionX 👷
 
-Launching the plugin pops up an fzf-tmux "popup" with fizzy search over existing session (-current session).
+Launching the plugin pops up an fzf-tmux "popup" with fuzzy search over existing session (-current session).
 If you insert a non-existing name and hit enter, a new session with that name will be created.
 
 - `alt+backspace` will delete the selected session
 - `Ctrl-u` scroll preview up
 - `Ctrl-d` scroll preview down
-- `Ctrl-n` select preview up
-- `Ctrl-p` select preview down
+- `Ctrl-p` select session up
+- `Ctrl-n` select session down
 - `Ctrl-r` "read": will launch a `read` prompt to rename a session within the list
 - `Ctrl-w` "window": will reload the list with all the available _windows_ and their preview
-- `Ctrl-x` will fuzzy read `~/.config` or a configureable path of your choice (with `@session-x-path`)
+- `Ctrl-x` will fuzzy read `~/.config` or a configurable path of your choice (with `@session-x-path`)
 - `Ctrl-e` "expand": will expand `PWD` and search for local directories to create additional session from
 - `Ctrl-b` "back": reloads the first query. Useful when going into window or expand mode, to go back
 - `Ctrl-t` "tree": reloads the preview with the tree of sessions+windows familiar from the native session manager (C-S)
@@ -214,7 +302,7 @@ set -g @sessionx-bind-fzf-marks 'alt-g'
 ## [Tmuxinator](https://github.com/tmuxinator/tmuxinator) Integration 🚀
 
 If you want sessionx to detect existing tmuxinator projects, you can set a `sessionx-tmuxinator-mode` in your config (see snippet below).
-With Tmuxinaor turned 'on' (off by default), the plugin will take a given name and look for a tmuxinator project with that name. If found, it'll **launch the template using tmuxinator**!.
+With Tmuxinator turned 'on' (off by default), the plugin will take a given name and look for a tmuxinator project with that name. If found, it'll **launch the template using tmuxinator**!.
 There's also a binding to list tmuxinator projects, defaulting to `Ctrl-/`, configurable via:
 
 ```bash
@@ -246,7 +334,7 @@ set -g @sessionx-bind-fzf-marks 'alt-g'
 ## WARNING ⚠️
 
 - If you're running `fzf` lower than [0.35.0](https://github.com/junegunn/fzf/releases/tag/0.35.0) there are a few missing missing features that might break the plugin. Either consider upgrading or add `@sessionx-legacy-fzf-support 'on'` to your config (see [configuration](#additional-configuration-options))
-- This plugin is not designed to be used outside Tmux, although PRs are happily recieved!
+- This plugin is not designed to be used outside Tmux, although PRs are happily received!
 
 ## Thanks ❤️
 
