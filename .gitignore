@@ -1,5 +1,5 @@
 dot_config/tmux/plugins
 dot_config/tmux/*.log
 **/dot_DS_Store
-**/._DS_Store
+**/.DS_Store
 dot_config/lazygit/state.yml
