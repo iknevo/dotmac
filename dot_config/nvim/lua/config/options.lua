@@ -38,7 +38,7 @@ vim.o.breakindent = true
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.iskeyword:remove("_")
 

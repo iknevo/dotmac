@@ -3,6 +3,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
+    enabled = false,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "nvim-lua/plenary.nvim",
@@ -39,7 +40,7 @@ return {
       },
       view = {
         centralize_selection = true,
-        adaptive_size = false,
+        adaptive_size = true,
         side = "right",
         preserve_window_proportions = true,
       },
