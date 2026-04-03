@@ -4,6 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
+    "onsails/lspkind.nvim",
     {
       "L3MON4D3/LuaSnip",
     },
@@ -15,12 +16,27 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+    local lspkind = require("lspkind")
     luasnip.filetype_extend("javascript", { "javascriptreact" })
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       formatting = {
-        format = require("tailwindcss-colorizer-cmp").formatter,
+
+        fields = { "abbr", "kind", "menu" },
+        format = lspkind.cmp_format({
+          maxwidth = 50,
+          ellipsis_char = "...",
+          mode = "symbol",
+          menu = {
+            nvim_lsp = "[LSP]",
+            luasnip = "",
+            path = "",
+          },
+          before = function(entry, item)
+            return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+          end,
+        }),
       },
       completion = {
         completeopt = "menu,menuone,noinsert",
@@ -31,8 +47,9 @@ return {
           border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
         completion = {
-          -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
           border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+          col_offset = -3,
+          side_padding = 1,
         },
       },
       -- autocompletion sources
