@@ -56,8 +56,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 bindkey '^P' up-history
 bindkey '^N' down-history
-bindkey '^K' autosuggest-accept
-
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# bindkey '^K' autosuggest-accept
+#
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#
