@@ -56,3 +56,7 @@ vim.o.undofile = true
 vim.o.signcolumn = "yes"
 
 vim.api.nvim_set_hl(0, "htmlLink", { underline = false })
+-- vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "LspReferenceWrite", { underline = true })
+vim.api.nvim_set_hl(0, "LspReferenceText", { underline = true })
+vim.api.nvim_set_hl(0, "LspReferenceRead", { underline = true })

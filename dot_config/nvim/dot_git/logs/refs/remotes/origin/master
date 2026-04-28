@@ -1,2 +1,6 @@
 0ad0f34ddf1e841911f3482adb2448eeb2aad86f b50d72120aba19dd8fb802f6f17e117874b22d7f nevo <nevoexists@gmail.com> 1776256868 +0200	fetch --all --no-write-fetch-head: fast-forward
 b50d72120aba19dd8fb802f6f17e117874b22d7f b8b2c3fe1c3f06e1da8d70c33b99d389a3592f57 nevo <nevoexists@gmail.com> 1776750098 +0200	fetch --all --no-write-fetch-head: fast-forward
+b8b2c3fe1c3f06e1da8d70c33b99d389a3592f57 25faf124c8fcdf01da376f4322c50f5cc0743578 nevo <nevoexists@gmail.com> 1777100648 +0300	fetch --all --no-write-fetch-head: fast-forward
+25faf124c8fcdf01da376f4322c50f5cc0743578 36b7561431404512074fd8ff968ca84998b242b3 nevo <nevoexists@gmail.com> 1777100723 +0300	update by push
+36b7561431404512074fd8ff968ca84998b242b3 495331db89878f4e93a9e748a9dadf7571d3aca6 nevo <nevoexists@gmail.com> 1777278844 +0300	fetch --all --no-write-fetch-head: fast-forward
+495331db89878f4e93a9e748a9dadf7571d3aca6 0d05bb3061fc526272a434d83ac40006d539ab06 nevo <nevoexists@gmail.com> 1777368933 +0300	fetch --all --no-write-fetch-head: fast-forward

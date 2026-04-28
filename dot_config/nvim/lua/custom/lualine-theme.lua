@@ -18,38 +18,38 @@ M.theme = function()
   return {
     inactive = {
       a = { fg = colors.gray, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
 
     normal = {
       a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
 
     insert = {
       a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
 
     visual = {
       a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
 
     replace = {
       a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
 
     command = {
       a = { fg = colors.darkgray, bg = colors.command, gui = "bold" },
-      b = { fg = colors.gray },
-      c = { fg = colors.gray },
+      b = { fg = colors.gray, bg = colors.black },
+      c = { fg = colors.gray, bg = colors.black },
     },
   }
 end
