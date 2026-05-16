@@ -1,19 +1,22 @@
 return {
   "folke/snacks.nvim",
-  -- keys = {
-  --   { "<leader>fF", false },
-  --   { "<leader>sC", false },
-  --   { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
-  --   { "<leader>E", "<leader>fE", desc = "Explorer Snacks (root dir)", remap = true },
-  --   { "<leader>e", "<leader>fe", desc = "Explorer Snacks (cwd)", remap = true },
-  --   {
-  --     "<leader>sc",
-  --     function()
-  --       Snacks.picker.commands()
-  --     end,
-  --     desc = "Search Commands",
-  --   },
-  -- },
+  keys = {
+    {
+      "<leader>ft",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Terminal (cwd)",
+    },
+
+    {
+      "<leader>fT",
+      function()
+        Snacks.terminal(nil, { cwd = LazyVim.root() })
+      end,
+      desc = "Terminal (Root Dir)",
+    },
+  },
   opts = {
     image = {},
     input = {},
@@ -38,8 +41,30 @@ return {
           hidden = false,
           ignored = false,
           exclude = { "node_modules" },
-          layout = { layout = { position = "left", width = 35 } },
+          -- layout = { layout = { position = "left", width = 35 } },
           -- exclude = { "node_modules", ".git", "dist", "build", ".next" },
+          layout = {
+            layout = {
+              box = "vertical",
+              width = 35,
+              position = "left",
+              {
+                win = "input",
+                height = 1,
+                border = "bottom",
+              },
+              {
+                win = "list",
+                border = "none",
+              },
+              {
+                win = "preview",
+                border = "top",
+                height = 0.4,
+                title = "{preview}",
+              },
+            },
+          },
         },
       },
       icons = {

@@ -55,7 +55,7 @@ return {
 --   {
 --     "LazyVim/LazyVim",
 --     opts = {
---       colorscheme = "lackluster-hack",
+--       colorscheme = "lackluster-mint",
 --     },
 --   },
 -- }

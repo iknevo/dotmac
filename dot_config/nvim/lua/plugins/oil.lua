@@ -16,14 +16,14 @@ return {
           return name == ".." or name == ".git"
         end,
       },
+      confirmation = {
+        border = "rounded",
+      },
       float = {
-        padding = 2,
-        max_width = 90,
-        max_height = 0,
+        border = "rounded",
       },
       win_options = {
         wrap = true,
-        winblend = 0,
       },
       keymaps = {
         -- ["h"] = { "actions.parent", mode = "n" },
@@ -31,6 +31,7 @@ return {
         ["q"] = { "actions.close", mode = "n" },
         ["<CR>"] = "actions.select",
         ["<C-p>"] = "actions.preview",
+        ["<C-l>"] = false,
         ["<C-r>"] = "actions.refresh",
         ["_"] = { "actions.open_cwd", mode = "n" },
         ["."] = { "actions.toggle_hidden", mode = "n" },

@@ -11,7 +11,7 @@ vim.o.linespace = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
 
--- vim.o.cursorline = false
+vim.o.cursorline = false
 
 -- vim.opt.scrolloff = 999
 

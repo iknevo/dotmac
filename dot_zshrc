@@ -11,6 +11,8 @@ alias t='tmux attach || tmux new -s Coding'
 alias tn='tmux new -s'
 alias tx='tmux kill-server'
 
+alias c='opencode'
+
 alias ..='z ..'
 alias ...='z ../..'
 alias ....='z ../../..'

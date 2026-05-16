@@ -4,7 +4,7 @@ return {
   version = "*",
   keys = {
     {
-      "<leader>kk",
+      "<leader>uk",
       function()
         require("screenkey").toggle()
       end,
