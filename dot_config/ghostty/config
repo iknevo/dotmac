@@ -1,5 +1,8 @@
 background = #000000
 foreground = #bebebe
+cursor-color = #e55812
+selection-background = #8a8a8d
+selection-foreground = #000000
 
 palette = 0=#333333
 palette = 1=#e19e74
