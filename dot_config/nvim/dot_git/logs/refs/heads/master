@@ -1,26 +1,2 @@
-0000000000000000000000000000000000000000 0ad0f34ddf1e841911f3482adb2448eeb2aad86f nevo <nevoexists@gmail.com> 1775248033 +0200	clone: from github.com:iknevo/nvim.git
-0ad0f34ddf1e841911f3482adb2448eeb2aad86f b50d72120aba19dd8fb802f6f17e117874b22d7f nevo <nevoexists@gmail.com> 1776256887 +0200	pull --no-edit: Fast-forward
-b50d72120aba19dd8fb802f6f17e117874b22d7f b8b2c3fe1c3f06e1da8d70c33b99d389a3592f57 nevo <nevoexists@gmail.com> 1776750102 +0200	pull --no-edit: Fast-forward
-b8b2c3fe1c3f06e1da8d70c33b99d389a3592f57 25faf124c8fcdf01da376f4322c50f5cc0743578 nevo <nevoexists@gmail.com> 1777100651 +0300	pull --no-edit: Fast-forward
-25faf124c8fcdf01da376f4322c50f5cc0743578 36b7561431404512074fd8ff968ca84998b242b3 nevo <nevoexists@gmail.com> 1777100719 +0300	commit: sync
-36b7561431404512074fd8ff968ca84998b242b3 495331db89878f4e93a9e748a9dadf7571d3aca6 nevo <nevoexists@gmail.com> 1777278847 +0300	pull --no-edit: Fast-forward
-495331db89878f4e93a9e748a9dadf7571d3aca6 0d05bb3061fc526272a434d83ac40006d539ab06 nevo <nevoexists@gmail.com> 1777368957 +0300	pull --no-edit: Fast-forward
-0d05bb3061fc526272a434d83ac40006d539ab06 5c133b9d5fb8d77cf96d2d081b65fef3c676861d nevo <nevoexists@gmail.com> 1777700868 +0300	pull --no-edit: Fast-forward
-5c133b9d5fb8d77cf96d2d081b65fef3c676861d 1262393ce0e1af0087ac68a9e291ce3c45f979a7 nevo <nevoexists@gmail.com> 1777700899 +0300	commit: sync
-1262393ce0e1af0087ac68a9e291ce3c45f979a7 0049d0f13a0efe2b82d745f3558aa9b4237b97b8 nevo <nevoexists@gmail.com> 1777788555 +0300	pull --no-edit: Fast-forward
-0049d0f13a0efe2b82d745f3558aa9b4237b97b8 3a2cb8bb5975f45f45cf80684e5e766057c6ce36 nevo <nevoexists@gmail.com> 1777907385 +0300	pull --no-edit: Fast-forward
-3a2cb8bb5975f45f45cf80684e5e766057c6ce36 845b693bfa5e73869932f9c1d4068f01d5aaafae nevo <nevoexists@gmail.com> 1778054570 +0300	pull --no-edit: Fast-forward
-845b693bfa5e73869932f9c1d4068f01d5aaafae 93a5da7c04b5bc29efa743cb01e85300177aba57 nevo <nevoexists@gmail.com> 1778245491 +0300	pull --no-edit: Fast-forward
-93a5da7c04b5bc29efa743cb01e85300177aba57 36be579ad39e6f9c6f57b030a1042ce561e780a2 nevo <nevoexists@gmail.com> 1778940174 +0300	pull --no-edit: Fast-forward
-36be579ad39e6f9c6f57b030a1042ce561e780a2 a2034c4ca575deb49477e522781d0a600d65e1fd nevo <nevoexists@gmail.com> 1780031815 +0300	pull --no-edit: Fast-forward
-a2034c4ca575deb49477e522781d0a600d65e1fd 6420e79a092907e3b1400452834a85b73a9d0b45 nevo <nevoexists@gmail.com> 1780059058 +0300	pull --no-edit: Fast-forward
-6420e79a092907e3b1400452834a85b73a9d0b45 4d19f2daf290e0812574ce9e3d3dc34d834693ca nevo <nevoexists@gmail.com> 1780059479 +0300	pull --no-edit: Fast-forward
-4d19f2daf290e0812574ce9e3d3dc34d834693ca 2198644c9e24deeb3a18701413b0c00898273155 nevo <nevoexists@gmail.com> 1780761339 +0300	pull --no-edit: Fast-forward
-2198644c9e24deeb3a18701413b0c00898273155 32678f6b7ad92e19e5c582ce8d5b3a2bc5d1db05 nevo <nevoexists@gmail.com> 1780807693 +0300	pull --no-edit: Fast-forward
-32678f6b7ad92e19e5c582ce8d5b3a2bc5d1db05 536bbac430735c78443089ea59e4bb13911d5539 nevo <nevoexists@gmail.com> 1782373589 +0300	pull --no-edit: Fast-forward
-536bbac430735c78443089ea59e4bb13911d5539 2e042bfe645dcae0427af2564ab8e26b0787f1e8 nevo <nevoexists@gmail.com> 1782522321 +0300	pull --no-edit: Fast-forward
-2e042bfe645dcae0427af2564ab8e26b0787f1e8 c032e593d163795f1343165fa1553a64c8002ec5 nevo <nevoexists@gmail.com> 1783667493 +0300	pull --no-edit: Fast-forward
-c032e593d163795f1343165fa1553a64c8002ec5 d94e040f33aeef3e3426b222e23663bea7b3d53f nevo <nevoexists@gmail.com> 1783671345 +0300	pull --no-edit: Fast-forward
-d94e040f33aeef3e3426b222e23663bea7b3d53f 5e0db480afb936ada896159af2772592d45bfea5 nevo <nevoexists@gmail.com> 1783672016 +0300	pull --no-edit: Fast-forward
-5e0db480afb936ada896159af2772592d45bfea5 1382e92a1877f191d3935f875014d16e2afe0c00 nevo <nevoexists@gmail.com> 1783672236 +0300	commit: sync
-1382e92a1877f191d3935f875014d16e2afe0c00 00da25c517d7f8543acf3f338f5bdcd3e2151ce1 nevo <nevoexists@gmail.com> 1783672859 +0300	commit: sync
+0000000000000000000000000000000000000000 f0db7a8a8b192065e440b51e8ac9dd0edb39ec3c nevo <nevoexists@gmail.com> 1783683848 +0300	clone: from github.com:iknevo/nvim.git
+f0db7a8a8b192065e440b51e8ac9dd0edb39ec3c 51b7003c2093e03bd9562605202fab222d5f888a nevo <nevoexists@gmail.com> 1783684014 +0300	commit: sync
