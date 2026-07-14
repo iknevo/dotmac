@@ -1,42 +1,14 @@
 return {
-  {
-    "ribru17/bamboo.nvim",
-    priority = 1000,
-    opts = {
+  "ribru17/bamboo.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("bamboo").setup({
       style = "multiplex",
       lualine = {
         transparent = true,
       },
-    },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "bamboo",
-    },
-  },
+    })
+    require("bamboo").load()
+  end,
 }
-
--- return {
---   {
---     "kartikp10/noctis.nvim",
---     priority = 1000,
---   },
---   {
---     "folke/snacks.nvim",
---     opts = {
---       lazygit = {
---         -- configure = false,
---         theme = {
---           selectedLineBgColor = { fg = "LineNr", bg = "Comment" },
---         },
---       },
---     },
---   },
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "noctis",
---     },
---   },
--- }
