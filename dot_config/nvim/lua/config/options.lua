@@ -20,42 +20,42 @@ vim.opt.termguicolors = true
 vim.opt.linespace = 4
 
 vim.opt.fillchars = {
-  diff = "╱",
-  eob = " ",
+	diff = "╱",
+	eob = " ",
 }
 
 vim.diagnostic.config({
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = " ",
-      [vim.diagnostic.severity.WARN] = " ",
-      [vim.diagnostic.severity.INFO] = " ",
-      [vim.diagnostic.severity.HINT] = "󰌵 ",
-    },
-  },
-  virtual_text = {
-    prefix = function(diagnostic)
-      local icons = {
-        [vim.diagnostic.severity.ERROR] = " ",
-        [vim.diagnostic.severity.WARN] = " ",
-        [vim.diagnostic.severity.INFO] = " ",
-        [vim.diagnostic.severity.HINT] = "󰌵 ",
-      }
-      return icons[diagnostic.severity]
-    end,
-    format = function(diagnostic)
-      return (diagnostic.message:gsub("^%[.-%]%s*", ""))
-    end,
-  },
-  virtual_lines = false,
-  underline = false,
-  update_in_insert = true,
-  float = {
-    source = true,
-  },
-  on_ready = function()
-    vim.cmd("highlight DiagnosticVirtualText guibg=NONE")
-  end,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.HINT] = "󰌵 ",
+		},
+	},
+	virtual_text = {
+		prefix = function(diagnostic)
+			local icons = {
+				[vim.diagnostic.severity.ERROR] = " ",
+				[vim.diagnostic.severity.WARN] = " ",
+				[vim.diagnostic.severity.INFO] = " ",
+				[vim.diagnostic.severity.HINT] = "󰌵 ",
+			}
+			return icons[diagnostic.severity]
+		end,
+		format = function(diagnostic)
+			return (diagnostic.message:gsub("^%[.-%]%s*", ""))
+		end,
+	},
+	virtual_lines = false,
+	underline = false,
+	update_in_insert = true,
+	float = {
+		source = true,
+	},
+	on_ready = function()
+		vim.cmd("highlight DiagnosticVirtualText guibg=NONE")
+	end,
 })
 
 -- vim.opt.pumblend = 10

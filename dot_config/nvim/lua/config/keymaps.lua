@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -71,20 +71,8 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
--- lazygit
-if vim.fn.executable("lazygit") == 1 then
-	map("n", "<leader>gg", function()
-		Snacks.lazygit()
-	end, { desc = "Lazygit" })
-end
-
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
-
--- floating terminal
-map("n", "<leader>ft", function()
-	Snacks.terminal()
-end, { desc = "Terminal (cwd)" })
 
 -- map("i", "jk", "<Esc>")
 
@@ -105,10 +93,6 @@ map("n", "=", "<C-W>v", { desc = "Split Window Right", remap = true })
 -- better scrolling
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll Down", remap = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll Up", remap = true })
-
--- Find and center
-vim.keymap.set("n", "n", "nzzzv", opts)
-vim.keymap.set("n", "N", "Nzzzv", opts)
 
 -- Duplicate line and comment the first line
 map("n", "ycc", '"yy" . v:count1 . "gcc\']p"', { remap = true, expr = true })
