@@ -18,8 +18,18 @@ map("n", "<A-k>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<A-l>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 
 -- Move Lines
-map("v", "<C-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down", silent = true })
-map("v", "<C-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up", silent = true })
+map(
+  "v",
+  "<C-j>",
+  ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",
+  { desc = "Move Down", silent = true }
+)
+map(
+  "v",
+  "<C-k>",
+  ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv",
+  { desc = "Move Up", silent = true }
+)
 
 -- Clear search and stop snippet on escape
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlights", silent = true })
@@ -45,23 +55,24 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 
 -- quickfix list
 map("n", "<leader>xq", function()
-	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
+  local success, err =
+    pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
 end, { desc = "Quickfix List" })
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-	return function()
-		vim.diagnostic.jump({
-			count = (next and 1 or -1) * vim.v.count1,
-			severity = severity and vim.diagnostic.severity[severity] or nil,
-			float = true,
-		})
-	end
+  return function()
+    vim.diagnostic.jump({
+      count = (next and 1 or -1) * vim.v.count1,
+      severity = severity and vim.diagnostic.severity[severity] or nil,
+      float = true,
+    })
+  end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
@@ -99,7 +110,7 @@ map("n", "ycc", '"yy" . v:count1 . "gcc\']p"', { remap = true, expr = true })
 
 -- Toggle cursor line
 vim.keymap.set("n", "<leader>ux", function()
-	vim.wo.cursorline = not vim.wo.cursorline
+  vim.wo.cursorline = not vim.wo.cursorline
 end, { desc = "Toggle cursor line" })
 
 map("n", "H", "^", { desc = "Start of the line" })
