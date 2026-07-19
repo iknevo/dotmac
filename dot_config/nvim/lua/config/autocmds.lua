@@ -135,4 +135,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
+vim.api.nvim_create_autocmd("ModeChanged", {
+  group = augroup("clear_highlights"),
+  pattern = { "[vV\x16]*:n", "[oO]*:n" },
+  callback = function()
+    vim.cmd("nohlsearch")
+  end,
+})
+
 vim.hl.priorities.semantic_tokens = 95

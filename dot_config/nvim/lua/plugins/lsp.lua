@@ -49,9 +49,24 @@ return {
         lua_ls = {},
         cssls = {
           settings = {
-            css = { validate = true },
-            scss = { validate = true },
-            less = { validate = true },
+            css = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+            scss = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+            less = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
           },
         },
         tailwindcss = {

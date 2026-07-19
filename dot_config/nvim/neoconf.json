@@ -1,0 +1,25 @@
+{
+  "neodev": {
+    "library": {
+      "enabled": true,
+      "plugins": true
+    }
+  },
+  "neoconf": {
+    "plugins": {
+      "lua_ls": {
+        "enabled": true
+      }
+    }
+  },
+  "lspconfig": {
+    "cssls": {
+      "css": {
+        "validate": true,
+        "lint": {
+          "unknownAtRules": "ignore"
+        }
+      }
+    }
+  }
+}
