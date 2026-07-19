@@ -33,6 +33,28 @@ return {
           end,
         },
         { "gx", desc = "Open with system app" },
+        {
+          "<leader>m",
+          group = "multi-cursor",
+          expand = function()
+            return {
+              { "i", desc = "Insert mode" },
+              { "a", desc = "Append mode" },
+              { "e", desc = "Extend mode" },
+              { "c", desc = "Change mode" },
+              { "n", desc = "Next match" },
+              { "N", desc = "Prev match" },
+              { "q", desc = "Skip current" },
+              { "Q", desc = "Skip prev" },
+              { "r", desc = "Replace from clipboard" },
+              { "p", desc = "Put before" },
+              { "P", desc = "Put after" },
+              { "y", desc = "Yank" },
+              { "d", desc = "Delete" },
+              { "<Esc>", desc = "Exit" },
+            }
+          end,
+        },
       },
     },
   },

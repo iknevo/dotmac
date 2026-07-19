@@ -32,7 +32,7 @@ map(
 )
 
 -- Clear search and stop snippet on escape
-vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlights", silent = true })
+map("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlights", silent = true })
 
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
 map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
@@ -109,7 +109,7 @@ map("n", "<C-u>", "<C-u>zz", { desc = "Scroll Up", remap = true })
 map("n", "ycc", '"yy" . v:count1 . "gcc\']p"', { remap = true, expr = true })
 
 -- Toggle cursor line
-vim.keymap.set("n", "<leader>ux", function()
+map("n", "<leader>ux", function()
   vim.wo.cursorline = not vim.wo.cursorline
 end, { desc = "Toggle cursor line" })
 
@@ -117,6 +117,8 @@ map("n", "H", "^", { desc = "Start of the line" })
 map("n", "L", "$", { desc = "End of the line" })
 
 -- Redo last change
-vim.keymap.set("n", "U", "<C-r>", { desc = "Redo last change" })
+map("n", "U", "<C-r>", { desc = "Redo last change" })
 
-vim.keymap.set("n", "Q", "<nop>")
+map("n", "Q", "<nop>")
+
+map("x", "u", "~", { desc = "Toggle case" })
