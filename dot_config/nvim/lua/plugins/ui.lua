@@ -22,10 +22,8 @@ return {
   {
     "b0o/incline.nvim",
     enabled = true,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     config = function()
-      local devicons = require("nvim-web-devicons")
-
       require("incline").setup({
         hide = {
           only_win = false,
@@ -37,8 +35,9 @@ return {
             filename = "[No Name]"
           end
 
-          local ext = vim.fn.fnamemodify(bufname, ":e")
-          local icon, icon_color = devicons.get_icon(filename, ext, { default = true })
+          local icon, icon_hl = require("mini.icons").get("file", filename)
+          icon = icon or ""
+          local icon_color = icon_hl and vim.api.nvim_get_hl(0, { name = icon_hl }).fg or nil
 
           local modified = vim.bo[props.buf].modified
 

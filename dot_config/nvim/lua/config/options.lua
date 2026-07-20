@@ -24,6 +24,9 @@ vim.opt.fillchars = {
   eob = " ",
 }
 
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
 vim.diagnostic.config({
   signs = {
     text = {
@@ -80,9 +83,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "screen"
 vim.opt.winminwidth = 5
-vim.opt.scrolloff = 4
-vim.opt.sidescrolloff = 4
+vim.opt.scrolloff = 8
 vim.opt.jumpoptions = "view"
+vim.o.winborder = "rounded"
 
 vim.opt.confirm = true
 vim.opt.undofile = true
@@ -91,7 +94,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 
 vim.opt.virtualedit = "block"
-vim.opt.wrap = true
+vim.wo.wrap = true
 vim.opt.linebreak = true
 vim.opt.completeopt = "menu,menuone,noinsert"
 vim.opt.iskeyword:remove("_")
@@ -99,8 +102,8 @@ vim.opt.iskeyword:remove("_")
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.updatetime = 300
-vim.opt.timeoutlen = 500
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 vim.opt.smoothscroll = true
 vim.opt.spelllang = { "en" }
 

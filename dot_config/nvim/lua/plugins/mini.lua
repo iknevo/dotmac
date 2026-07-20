@@ -55,4 +55,24 @@ return {
     },
   },
   { "nvim-mini/mini.ai", version = "*" },
+  {
+    "nvim-mini/mini.icons",
+    version = "*",
+    opts = {
+      file = {
+        [".prettierrc"] = { glyph = "", hl = "MiniIconsOrange" },
+        ["favicon.ico"] = { glyph = "", hl = "MiniIconsOrange" },
+        ["components.json"] = { glyph = "󰋘", hl = "MiniIconsCyan" },
+        [".env"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+        [".env.example"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+        [".env.local"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+        [".env.production"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+        [".env.staging"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+        [".env.test"] = { glyph = "󰘮", hl = "MiniIconsYellow" },
+      },
+    },
+    config = function(_, opts)
+      require("mini.icons").setup(opts)
+    end,
+  },
 }

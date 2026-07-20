@@ -1,11 +1,12 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("nevo_" .. name, { clear = true })
 end
 
 local arg = vim.fn.argv(0)
 if type(arg) == "table" then
   arg = arg[1]
 end
+
 if vim.fn.argc() == 1 and vim.fn.isdirectory(arg) == 1 then
   vim.cmd("cd " .. vim.fn.fnameescape(arg))
 end
@@ -20,13 +21,14 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
   group = augroup("highlight_yank"),
   callback = function()
-    vim.hl.on_yank()
+    vim.highlight.on_yank()
   end,
 })
 
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+vim.api.nvim_create_autocmd("VimResized", {
   group = augroup("resize_splits"),
   callback = function()
     local current_tab = vim.fn.tabpagenr()
@@ -40,12 +42,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function(event)
     local exclude = { "gitcommit" }
     local buf = event.buf
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].lazyvim_last_loc then
+
+    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].last_loc then
       return
     end
-    vim.b[buf].lazyvim_last_loc = true
+
+    vim.b[buf].last_loc = true
+
     local mark = vim.api.nvim_buf_get_mark(buf, '"')
     local lcount = vim.api.nvim_buf_line_count(buf)
+
     if mark[1] > 0 and mark[1] <= lcount then
       pcall(vim.api.nvim_win_set_cursor, 0, mark)
     end
@@ -74,6 +80,7 @@ vim.api.nvim_create_autocmd("FileType", {
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
+
     vim.schedule(function()
       vim.keymap.set("n", "q", function()
         vim.cmd("close")
@@ -105,15 +112,15 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("formatoptions"),
   pattern = "*",
   callback = function()
     vim.opt_local.formatoptions:remove({ "r", "o" })
   end,
 })
 
--- Show absolute line number when in insert mode (easier to see current line)
--- Revert to relative numbers when leaving insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
+  group = augroup("relative_number_insert"),
   callback = function()
     if vim.wo.number then
       vim.wo.relativenumber = false
@@ -122,6 +129,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
+  group = augroup("relative_number_insert"),
   callback = function()
     if vim.wo.number then
       vim.wo.relativenumber = true
@@ -130,6 +138,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
+  group = augroup("html_link"),
   callback = function()
     vim.cmd("highlight htmlLink gui=NONE cterm=NONE")
   end,
@@ -143,4 +152,36 @@ vim.api.nvim_create_autocmd("ModeChanged", {
   end,
 })
 
-vim.hl.priorities.semantic_tokens = 95
+local function snacks_git_highlights()
+  vim.api.nvim_set_hl(0, "SnacksPickerGitStatusAdded", {
+    fg = "#8fb573",
+    bold = true,
+  })
+
+  vim.api.nvim_set_hl(0, "SnacksPickerGitStatusModified", {
+    fg = "#7daea3",
+    bold = true,
+  })
+
+  vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", {
+    fg = "#d8a657",
+    bold = true,
+  })
+
+  vim.api.nvim_set_hl(0, "SnacksPickerGitStatusDeleted", {
+    fg = "#e67e80",
+    bold = true,
+  })
+
+  vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", {
+    fg = "#7c8377",
+    italic = true,
+  })
+end
+
+snacks_git_highlights()
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = augroup("snacks_git_highlights"),
+  callback = snacks_git_highlights,
+})

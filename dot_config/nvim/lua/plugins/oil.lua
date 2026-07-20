@@ -3,7 +3,7 @@ return {
   enabled = false,
   opts = {},
   lazy = false,
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
   config = function()
     require("oil").setup({
       default_file_explorer = true,
