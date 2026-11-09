@@ -30,11 +30,11 @@ resize-overlay = never
 
 font-family = JetBrains Mono
 font-size = 18
-window-decoration = false
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 
-maximize = true
+window-decoration = false
+maximize = false
 
 # Cursor stlying
 cursor-style = "block"
@@ -48,6 +48,7 @@ keybind = super+control+shift+alt+arrow_down=resize_split:down,100
 keybind = super+control+shift+alt+arrow_up=resize_split:up,100
 keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+keybind = super+v=paste_from_clipboard
 
 # Slowdown mouse scrolling
 # mouse-scroll-multiplier = 1.1
